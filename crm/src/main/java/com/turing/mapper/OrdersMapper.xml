@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.turing.mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.turing.entity.Orders">
+    <result column="odr_id" jdbcType="INTEGER" property="odrId" />
+    <result column="odr_customer" jdbcType="VARCHAR" property="odrCustomer" />
+    <result column="odr_date" jdbcType="DATE" property="odrDate" />
+    <result column="odr_addr" jdbcType="VARCHAR" property="odrAddr" />
+    <result column="odr_status" jdbcType="VARCHAR" property="odrStatus" />
+  </resultMap>
+  
+  <resultMap id="BaseResultMap2" type="com.turing.entity.Orders">
+    <result column="odr_id" jdbcType="INTEGER" property="odrId" />
+    <result column="odr_customer" jdbcType="VARCHAR" property="odrCustomer" />
+    <result column="odr_date" jdbcType="DATE" property="odrDate" />
+    <result column="odr_addr" jdbcType="VARCHAR" property="odrAddr" />
+    <result column="odr_status" jdbcType="VARCHAR" property="odrStatus" />
+    
+     <collection property="ordersLine" ofType="com.turing.entity.OrdersLine">
+       <result column="odd_id" jdbcType="INTEGER" property="oddId" />
+	    <result column="odd_order_id" jdbcType="INTEGER" property="oddOrderId" />
+	    <result column="odd_prod_id" jdbcType="INTEGER" property="oddProdId" />
+	    <result column="odd_count" jdbcType="INTEGER" property="oddCount" />
+	    <result column="odd_unit" jdbcType="VARCHAR" property="oddUnit" />
+	    <result column="odd_price" jdbcType="DECIMAL" property="oddPrice" />
+     </collection>
+     
+      <collection property="product" ofType="com.turing.entity.Product">
+          <result column="prod_id" jdbcType="INTEGER" property="prodId" />
+		    <result column="prod_name" jdbcType="VARCHAR" property="prodName" />
+		    <result column="prod_type" jdbcType="VARCHAR" property="prodType" />
+		    <result column="prod_batch" jdbcType="VARCHAR" property="prodBatch" />
+		    <result column="prod_unit" jdbcType="VARCHAR" property="prodUnit" />
+		    <result column="prod_price" jdbcType="DECIMAL" property="prodPrice" />
+		    <result column="prod_memo" jdbcType="VARCHAR" property="prodMemo" />
+     </collection>
+    
+  </resultMap>
+  
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    odr_id, odr_customer, odr_date, odr_addr, odr_status
+  </sql>
+  
+  <!-- 自己定义的 -->
+  <select id="WljSelectsss" parameterType="String" resultMap="BaseResultMap2">
+  
+  SELECT * FROM orders a,orders_line b,product c
+  where a.odr_id=b.odd_order_id and b.odd_prod_id=c.prod_id and odr_id=#{id};
+  
+  </select>
+  
+  <select id="selectByExample" parameterType="com.turing.entity.OrdersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.turing.entity.OrdersExample">
+    delete from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.turing.entity.Orders">
+    insert into orders (odr_id, odr_customer, odr_date, 
+      odr_addr, odr_status)
+    values (#{odrId,jdbcType=INTEGER}, #{odrCustomer,jdbcType=VARCHAR}, #{odrDate,jdbcType=DATE}, 
+      #{odrAddr,jdbcType=VARCHAR}, #{odrStatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.turing.entity.Orders">
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="odrId != null">
+        odr_id,
+      </if>
+      <if test="odrCustomer != null">
+        odr_customer,
+      </if>
+      <if test="odrDate != null">
+        odr_date,
+      </if>
+      <if test="odrAddr != null">
+        odr_addr,
+      </if>
+      <if test="odrStatus != null">
+        odr_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="odrId != null">
+        #{odrId,jdbcType=INTEGER},
+      </if>
+      <if test="odrCustomer != null">
+        #{odrCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="odrDate != null">
+        #{odrDate,jdbcType=DATE},
+      </if>
+      <if test="odrAddr != null">
+        #{odrAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="odrStatus != null">
+        #{odrStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.turing.entity.OrdersExample" resultType="java.lang.Long">
+    select count(*) from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update orders
+    <set>
+      <if test="record.odrId != null">
+        odr_id = #{record.odrId,jdbcType=INTEGER},
+      </if>
+      <if test="record.odrCustomer != null">
+        odr_customer = #{record.odrCustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.odrDate != null">
+        odr_date = #{record.odrDate,jdbcType=DATE},
+      </if>
+      <if test="record.odrAddr != null">
+        odr_addr = #{record.odrAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.odrStatus != null">
+        odr_status = #{record.odrStatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update orders
+    set odr_id = #{record.odrId,jdbcType=INTEGER},
+      odr_customer = #{record.odrCustomer,jdbcType=VARCHAR},
+      odr_date = #{record.odrDate,jdbcType=DATE},
+      odr_addr = #{record.odrAddr,jdbcType=VARCHAR},
+      odr_status = #{record.odrStatus,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

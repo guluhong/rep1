@@ -1,0 +1,213 @@
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(../images2/sms_bg.png) #fff repeat-x; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.bold {
+	FONT-WEIGHT: bold
+}
+.wrap {
+	MARGIN: 0px auto
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+A:link {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #000; TEXT-DECORATION: underline
+}
+.clear {
+	HEIGHT: 0px; CLEAR: both; OVERFLOW: hidden
+}
+.clearfix:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: "."
+}
+.clearfix {
+	DISPLAY: inline-block
+}
+.clearfix {
+	DISPLAY: block
+}
+#loginTitle {
+	BACKGROUND: url(../images2/sms_login_title.png) no-repeat center bottom; HEIGHT: 100px
+}
+#regTitle {
+	BACKGROUND: url(../images2/sms_reg_title.png) no-repeat center bottom; HEIGHT: 100px
+}
+#loginForm {
+	BACKGROUND: url(../images2/sms_login_bg.png) no-repeat center top; HEIGHT: 306px
+}
+#loginForm DL {
+	MARGIN: 100px auto auto; WIDTH: 200px
+}
+#loginForm DL DT {
+	WIDTH: 60px
+}
+#regForm {
+	BACKGROUND: url(../images2/sms_reg_bg.png) no-repeat center top; HEIGHT: 306px
+}
+#regForm DL {
+	MARGIN: 40px auto auto; WIDTH: 215px
+}
+#regForm DL DT {
+	WIDTH: 75px
+}
+.userForm {
+	MARGIN: 20px auto
+}
+.userForm DL {
+	LINE-HEIGHT: 46px; FONT-SIZE: 14px
+}
+.userForm DL DT {
+	FLOAT: left; CLEAR: left
+}
+.userForm DL DD {
+	FLOAT: left
+}
+.userForm DL INPUT {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 5px; BORDER-RIGHT-STYLE: none; MARGIN: 5px 0px; PADDING-LEFT: 5px; WIDTH: 130px; PADDING-RIGHT: 5px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images2/sms_input_bg.gif) no-repeat; HEIGHT: 22px; FONT-SIZE: 16px; BORDER-LEFT-STYLE: none; PADDING-TOP: 5px
+}
+.userForm .buttons {
+	TEXT-ALIGN: center; CLEAR: both; PADDING-TOP: 20px
+}
+.userForm .buttons INPUT {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; MARGIN: 0px 15px; WIDTH: 87px; BORDER-TOP-STYLE: none; HEIGHT: 39px; BORDER-LEFT-STYLE: none; CURSOR: pointer
+}
+.userForm .buttons .btn-login {
+	BACKGROUND: url(../images2/sms_btn_login.png)
+}
+.userForm .buttons .btn-reg {
+	BACKGROUND: url(../images2/sms_btn_reg.png)
+}
+.userForm .buttons .btn-reset {
+	BACKGROUND: url(../images2/sms_btn_reset.png)
+}
+.userForm .goback {
+	PADDING-TOP: 40px
+}
+.userForm .goback A {
+	TEXT-INDENT: -1000em; MARGIN: 0px auto; WIDTH: 61px; DISPLAY: block; BACKGROUND: url(../images2/sms_btn_goback.png); HEIGHT: 19px; OVERFLOW: hidden
+}
+#main {
+	PADDING-BOTTOM: 60px; BACKGROUND: url(../images2/sms_home_bg.png) center top; HEIGHT: 100%; PADDING-TOP: 70px
+}
+#main .mainbox {
+	MARGIN: 0px auto; WIDTH: 850px; FONT-SIZE: 14px
+}
+#main .title {
+	HEIGHT: 34px
+}
+#main .myMessage {
+	BACKGROUND: url(../images2/sms_my_message.png) no-repeat
+}
+#main .readMessage {
+	BACKGROUND: url(../images2/sms_read_message.png) no-repeat
+}
+#main .sendMessage {
+	BACKGROUND: url(../images2/sms_send_message.png) no-repeat
+}
+#main .menu {
+	TEXT-ALIGN: right; MARGIN: 20px auto
+}
+#main .menu SPAN {
+	MARGIN-LEFT: 10px
+}
+#main .menu SPAN A {
+	FONT-WEIGHT: bold
+}
+#main .content {
+	PADDING-BOTTOM: 20px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 780px; PADDING-RIGHT: 0px; PADDING-TOP: 20px
+}
+#main .messageList UL LI {
+	BORDER-BOTTOM: #fff 1px dashed; LINE-HEIGHT: 45px; PADDING-LEFT: 50px; BACKGROUND: url(../images2/sms_readed.png) no-repeat 5px center
+}
+#main .messageList UL LI.unReaded {
+	BACKGROUND: url(../images2/sms_unReaded.png) no-repeat 5px center
+}
+#main .messageList UL LI EM {
+	FONT-STYLE: normal; MARGIN: 0px 5px; FLOAT: right
+}
+#main .messageList UL LI P {
+	DISPLAY: inline
+}
+#main .page-spliter {
+	TEXT-ALIGN: center; LINE-HEIGHT: 21px; MARGIN: 30px auto; BACKGROUND: url(../images2/sms_page_bg.png) no-repeat center top
+}
+#main .page-spliter A {
+	MARGIN: 0px 5px
+}
+#main .page-spliter SPAN.current {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+#main .message {
+	LINE-HEIGHT: 30px; BACKGROUND: url(../images2/sms_read_bg.png) repeat-x
+}
+#main .message .tmenu {
+	BORDER-BOTTOM: #fff 1px solid; BORDER-TOP: #fff 1px solid
+}
+#main .message .tmenu UL LI {
+	MARGIN: 0px 5px; FLOAT: left
+}
+#keyWord {
+	BORDER-BOTTOM-STYLE: none; PADDING-BOTTOM: 3px; BORDER-RIGHT-STYLE: none; MARGIN: 3px 0px; PADDING-LEFT: 5px; WIDTH: 114px; PADDING-RIGHT: 5px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images2/sms_keyword_bg.png); HEIGHT: 16px; FONT-SIZE: 14px; BORDER-LEFT-STYLE: none; PADDING-TOP: 3px
+}
+#keybox {
+	POSITION: relative
+}
+#keybox UL {
+	BORDER-BOTTOM: #5b7eb4 1px solid; POSITION: absolute; FILTER: alpha(opacity=80); BORDER-LEFT: #5b7eb4 1px solid; PADDING-BOTTOM: 4px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 122px; PADDING-RIGHT: 0px; DISPLAY: none; BACKGROUND: #fff; BORDER-TOP: #5b7eb4 1px solid; TOP: 25px; BORDER-RIGHT: #5b7eb4 1px solid; PADDING-TOP: 4px; LEFT: 5px; -moz-opacity: 0.8; -khtml-opacity: 0.8; opacity: 0.8
+}
+#keybox UL LI {
+	TEXT-ALIGN: left; LINE-HEIGHT: 20px; MARGIN: 0px; WIDTH: 112px; DISPLAY: block; FONT-SIZE: 12px; _width: 102px
+}
+#keybox UL LI A {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; DISPLAY: block; PADDING-TOP: 2px
+}
+#keybox UL LI A:hover {
+	BACKGROUND: #e7e7e7; TEXT-DECORATION: none
+}
+#main .message .view {
+	PADDING-BOTTOM: 20px; OVERFLOW-Y: auto; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; HEIGHT: 400px; CLEAR: both; PADDING-TOP: 20px
+}
+#main .message .view P {
+	TEXT-INDENT: 2em
+}
+#main .message .view TEXTAREA {
+	BORDER-BOTTOM: #5b7fb4 1px solid; BORDER-LEFT: #5b7fb4 1px solid; WIDTH: 600px; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 200px; MARGIN-LEFT: 55px; OVERFLOW: hidden; BORDER-TOP: #5b7fb4 1px solid; BORDER-RIGHT: #5b7fb4 1px solid
+}
+#main .message .view .send {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 20px
+}
+#main .message .view .send INPUT {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; WIDTH: 120px; BORDER-TOP-STYLE: none; BACKGROUND: url(../images2/sms_send.gif); HEIGHT: 30px; BORDER-LEFT-STYLE: none
+}
